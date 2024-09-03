@@ -1,0 +1,137 @@
+[
+    {
+      "topic": "AWS Solutions Architect",
+      "question": "Which AWS service is used for object storage?",
+      "difficulty": "easy",
+      "answers": [
+        {
+          "text": "Amazon S3",
+          "is_correct": true
+        },
+        {
+          "text": "Amazon EC2",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon RDS",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon DynamoDB",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon CloudFront",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "AWS Solutions Architect",
+      "question": "Which service provides a fully managed NoSQL database on AWS?",
+      "difficulty": "easy",
+      "answers": [
+        {
+          "text": "Amazon Aurora",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon DynamoDB",
+          "is_correct": true
+        },
+        {
+          "text": "Amazon Redshift",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon Neptune",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon DocumentDB",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "AWS Solutions Architect",
+      "question": "Which AWS service is designed for content delivery?",
+      "difficulty": "easy",
+      "answers": [
+        {
+          "text": "Amazon CloudFront",
+          "is_correct": true
+        },
+        {
+          "text": "Amazon EC2",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon S3",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon RDS",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon SNS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "AWS Solutions Architect",
+      "question": "Which AWS service allows you to run containerized applications?",
+      "difficulty": "easy",
+      "answers": [
+        {
+          "text": "Amazon RDS",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon ECS",
+          "is_correct": true
+        },
+        {
+          "text": "AWS Lambda",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon Lightsail",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon CloudFormation",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "AWS Solutions Architect",
+      "question": "Which service provides monitoring and observability for AWS resources?",
+      "difficulty": "easy",
+      "answers": [
+        {
+          "text": "Amazon CloudWatch",
+          "is_correct": true
+        },
+        {
+          "text": "AWS Shield",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon Route 53",
+          "is_correct": false
+        },
+        {
+          "text": "Amazon Inspector",
+          "is_correct": false
+        },
+        {
+          "text": "AWS CloudTrail",
+          "is_correct": false
+        }
+      ]
+    }
+]
