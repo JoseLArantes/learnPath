@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
+import { useAuth } from './useAuth';
 
 function App() {
+  const { token, storeToken } = useAuth();
   const [tests, setTests] = useState([]);
-  const [token, setToken] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,9 +16,9 @@ function App() {
         username,
         password
       });
-      setToken(response.data.token);
+      storeToken(response.data.token);
     } catch (error) {
-      console.error('Login failed:', error);
+      console.error('Login failed:', error.response ? error.response.data : error.message);
     }
   };
 
@@ -60,11 +61,17 @@ function App() {
         ) : (
           <>
             <h1>Available Tests</h1>
-            <ul>
+            <div className="tests-container">
               {tests.map((test) => (
-                  <li key={test.id}>{JSON.stringify(test)}</li>
+                <div key={test.id} className="test-card">
+                  <h2>Test #{test.id}</h2>
+                  <p><strong>Topic:</strong> {test.topic}</p>
+                  <p><strong>Number of Questions:</strong> {test.number_of_questions}</p>
+                  <p><strong>Difficulty:</strong> {test.difficulty}</p>
+                  <p><strong>Passing Score:</strong> {test.passing_score}%</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </>
         )}
       </header>
