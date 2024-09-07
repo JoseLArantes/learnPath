@@ -6,7 +6,7 @@ from .models import Test, TestResult, UserAnswer
 from .serializers import TestSerializer, TestResultSerializer
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from django.views.generic import TemplateView
+from rest_framework.permissions import IsAuthenticated
 
 def topic_list(request):
     topics = Topic.objects.all()
@@ -24,18 +24,22 @@ def question_list(request, topic_id, difficulty):
     return render(request, 'study/question_list.html', {'topic': topic, 'questions': questions, 'difficulty': difficulty})
 
 class TopicViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = Topic.objects.all()
     serializer_class = TopicSerializer
 
 class QuestionViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
 
 class AnswerViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = Answer.objects.all()
     serializer_class = AnswerSerializer
 
 class TestViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = Test.objects.all()
     serializer_class = TestSerializer
 
@@ -75,6 +79,6 @@ class TestViewSet(viewsets.ModelViewSet):
         )
         return Response({'passed': passed, 'score': score})
 class TestResultViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = TestResult.objects.all()
     serializer_class = TestResultSerializer
-
