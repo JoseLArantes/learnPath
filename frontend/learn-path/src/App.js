@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import { useAuth } from './useAuth';
+import TestCard from './TestCard';
 
 function App() {
   const { token, storeToken } = useAuth();
@@ -63,13 +64,7 @@ function App() {
             <h1>Available Tests</h1>
             <div className="tests-container">
               {tests.map((test) => (
-                <div key={test.id} className="test-card">
-                  <h2>Test #{test.id}</h2>
-                  <p><strong>Topic:</strong> {test.topic}</p>
-                  <p><strong>Number of Questions:</strong> {test.number_of_questions}</p>
-                  <p><strong>Difficulty:</strong> {test.difficulty}</p>
-                  <p><strong>Passing Score:</strong> {test.passing_score}%</p>
-                </div>
+                <TestCard key={test.id} test={test} />
               ))}
             </div>
           </>
