@@ -1,0 +1,17 @@
+replicaCount: 3
+image:
+  repository: jlarantes/learnpath
+  tag: 0.2
+  pullPolicy: IfNotPresent
+service:
+  type: NodePort
+  port: 8000
+resources: {}
+
+namespace: learnpath
+limits:
+  memory: "128Mi"
+  cpu: "500m"
+requests:
+  memory: "64Mi"
+  cpu: "250m"
