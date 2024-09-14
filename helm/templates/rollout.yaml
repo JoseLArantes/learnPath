@@ -1,11 +1,8 @@
-{{- if not .Values.rollout.enabled }}
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: {{ .Chart.Name }}
-  namespace: {{ .Values.namespace  }} 
-  labels:
-    app: {{ .Chart.Name }}
+  namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -26,4 +23,14 @@ spec:
         envFrom:
         - secretRef:
             name: learnpath-db-secrets
-{{- end }}
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - pause: {duration: 1m}
+      - setWeight: 40
+      - pause: {duration: 1m}
+      - setWeight: 60
+      - pause: {duration: 1m}
+      - setWeight: 80
+      - pause: {duration: 1m}
